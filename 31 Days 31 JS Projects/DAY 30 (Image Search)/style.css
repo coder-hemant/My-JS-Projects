@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  align-self: flex-start;
+}
+
+.image {
+  height: 250px;
+  background-color: pink;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}

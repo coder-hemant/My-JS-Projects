@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @media print {
+      * {
+        visibility: hidden;
+      }
+
+      p {
+        visibility: visible;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Print</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, eveniet ipsum nemo non commodi consectetur corporis minima dignissimos quis voluptatem numquam aperiam autem tenetur maxime exercitationem repellendus eos nisi voluptatum omnis doloribus. Dicta, autem at voluptate reiciendis voluptates quasi quibusdam, obcaecati ut expedita laudantium minima.</p>
+
+  <button onclick="window.print()">print</button>
+</body>
+</html>

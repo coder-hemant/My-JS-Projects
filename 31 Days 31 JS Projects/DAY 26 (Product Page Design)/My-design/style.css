@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: grey;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.product {
+  width: 650px;
+  height: 480px;
+  /* background-color: lightblue; */
+  /* overflow: hidden; */
+  border: solid 1px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(211, 208, 208);
+  align-items: center;
+  gap: 0;
+}
+
+.pic {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(1.1, 1.05);
+  -webkit-transform: scale(1.1, 1.05);
+  -moz-transform: scale(1.1, 1.05);
+  -ms-transform: scale(1.1, 1.05);
+  -o-transform: scale(1.1, 1.05);
+}
+
+.other {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe;
+  gap: 10px;
+}
+
+.productPic {
+  top: 0;
+  left: 0;
+  /* bottom: 0; */
+  width: 90%; 
+  height: 100%;
+  position: absolute;
+  object-position: -80px;
+  object-fit: cover;
+  
+  /* aspect-ratio: 16 / 9; */
+}
+
+.color {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.size {
+display: flex;
+align-items: center;
+gap: 15px;
+
+}
+
+span {
+  display: inline-block;
+  
+}
+
+.label {
+  width: 50px;
+  font-size: 14px;
+}
+
+.proColor {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.proColor:nth-child(2) {
+  background-color: maroon;
+  /* background: linear-gradient(to right, transparent 10%, red 10%, red 90%, transparent 90%); */
+
+  /* background: radial-gradient(circle at center, red 0%, red 80%, transparent 80%, transparent 100%); */
+}
+  
+.proColor:nth-child(3) {
+  background-color: black;
+}
+.proColor:nth-child(4) {
+  background-color: white;
+}
+.proColor:nth-child(5) {
+  background-color: blue;
+}
+
+.info {
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+}
+
+.radios {
+  z-index: 105;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  right: 50px;
+  bottom: 14px;
+}
+
+#pic1 {
+  z-index: 100;
+}
+
+.size span, .color div {
+  cursor: pointer;
+}
+
+.border {
+  box-shadow: 0 0 0 0.5px #000; /* Adjust the color as needed */
+    padding: 3px; /* To create the 3px gap */
+    background-clip: content-box; /* This prevents the background color from extending into the padding area */
+}
+
+.colored {
+  color: blue;
+}
+

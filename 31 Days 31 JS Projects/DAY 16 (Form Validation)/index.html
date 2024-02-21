@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <form id="myForm" action="">
+      <div class="parent">
+        <span class="first child"></span>
+        <input type="text" placeholder="Enter your name" id="myName" name="username" onkeyup="validateName()">
+      </div>
+      <div class="parent">
+        <span class="second child"></span>
+        <input type="email" placeholder="Enter your email" id="myEmail" name="email" onkeyup="validateEmail()">
+      </div>
+      <div class="parent">
+        <span class="third child"></span>
+        <input type="tel" placeholder="123 456 7890" id="myTel" name="telephone" onkeyup="validateTel()">
+      </div>
+      <div class="parent">
+        <span class="last child"></span>
+        <textarea placeholder="Write a message" id="myMes" name="message" onkeyup="validateMes()"></textarea>
+      </div>
+      <button>Submit</button>
+    </form>
+    <div class="div"></span>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

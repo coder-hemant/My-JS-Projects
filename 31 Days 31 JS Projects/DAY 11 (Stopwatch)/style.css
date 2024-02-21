@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(43, 43, 43, 0.859);
+  padding: 20px;
+  min-height: 100vh;
+  width: 100%;
+  padding-left: 20px;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  overflow: hidden;
+  width: 500px;
+  min-height: 300px;
+  background: url("https://media.istockphoto.com/id/1300296030/photo/tropical-beach-palm-trees-sea-wave-and-white-sand.webp?b=1&s=612x612&w=0&k=20&c=g17Ermu4tIN3-u7FeSfvYxUmhY3j3MbXobHJiG_OQsE=");
+  background-size: cover;
+  position: relative;
+}
+.overlay {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  position: absolute;
+  /* gap: 50px; */
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.time {
+  margin-top: 120px;
+  /* align-self: center; */
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.control {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.control i {
+}
+.control div:nth-child(2) i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  background-color: rgb(239, 117, 30);
+  height: 75px;
+  color: white;
+  width: 75px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.control div:nth-child(3) i, .control div:nth-child(1) i {
+  color: white;
+  font-size: 18px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.hour, .minute, .seconds, .ms {
+  text-align: center;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  /* border: solid 1px; */
+}
+
+.fa-pause {
+  color: white;
+}

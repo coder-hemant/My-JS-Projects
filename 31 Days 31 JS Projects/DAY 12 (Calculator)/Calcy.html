@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(235, 228, 228, 0.859);
+  padding: 20px;
+  min-height: 100lvh;
+  width: 100%;
+  padding-left: 20px;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calcy {
+  width: 350px;
+  padding: 25px 20px;
+  background-color: rgb(65, 65, 65);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.result {
+  overflow: auto;
+  padding-right: 10px;
+  padding-left: 10  px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 200%;
+  color: white;
+  width: 300px;
+  height: 90px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.39);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.row {
+  user-select: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  gap: 5%;
+}
+
+.button {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  text-align: center;
+  width: 18%;
+  height: 50px;
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.39);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  
+}
+
+.start, .backS, .equals {
+cursor: pointer;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 21px;
+text-align: center;
+width: 18%;
+height: 50px;
+box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.39);
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+}
+div.row:nth-child(6) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+div.row:nth-child(6) .equals:nth-child(3) {
+  width: 43.59%;
+}
+
+div.row:nth-child(2) .start:nth-child(1){
+  color: rgb(41, 44, 255);
+}
+div.row:nth-child(2) .backS:nth-child(2) {
+  color: red;
+}
+    </style>
+</head>
+<body>
+  <div class="calcy">
+    <div class="result">
+      
+    </div>
+    <div class="row">
+      <div class="start">AC</div>
+      <div class="backS">DE</div>
+      <div class="button">.</div>
+      <div class="button">/</div>
+    </div>
+    <div class="row">
+      <div class="button">7</div>
+      <div class="button">8</div>
+      <div class="button">9</div>
+      <div class="button">*</div>
+    </div>
+    <div class="row">
+      <div class="button">4</div>
+      <div class="button">5</div>
+      <div class="button">6</div>
+      <div class="button">-</div>
+    </div>
+    <div class="row">
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+      <div class="button">+</div>
+    </div>
+    <div class="row">
+      <div class="button">00</div>
+      <div class="button">0</div>
+      <div class="equals">=</div>
+    </div>
+  </div>
+  <script>
+    let buttons = document.querySelectorAll(".button");
+let start = document.querySelector(".start");
+let backS = document.querySelector(".backS");
+
+
+let result = document.querySelector(".result");
+let equals = document.querySelector(".equals");
+
+// Define the operators
+let operators = ['+', '-', '*', '/', '.'];
+
+// // Define the appendOperator function
+// function appendOperator(input, operator) {
+//     // Get the last character of the input
+//     let lastChar = input.slice(-1);
+
+//     // Check if the last character is not an operator
+//     if (!operators.includes(lastChar)) {
+//         // Append the operator
+//         input += operator;
+//     }
+
+//     return input;
+// }
+
+function appendOperator(input, operator) {
+    // Get the last character of the input
+    let lastChar = input.slice(-1);
+
+    // Define the operators
+    let operators = ['+', '-', '*', '/', '.'];
+
+    // Check if the last character is not an operator
+    if (!operators.includes(lastChar)) {
+        // Append the operator
+        input += operator;
+    } else if (operator === '.' && !input.split(/[\+\-\*\/]/).pop().includes('.')) {
+        // If the operator is a decimal point and the last number doesn't already contain a decimal point,
+        // append the decimal point
+        input += operator;
+    }
+
+    return input;
+}
+
+// buttons.forEach(button => {
+//   button.addEventListener("click", function() {
+//     result.append(button.textContent)
+//   })
+// })
+
+buttons.forEach(button => {
+  button.addEventListener("click", function() {
+    // Check if the button is an operator
+    if (operators.includes(button.textContent)) {
+      // Use the appendOperator function to append the operator
+      result.textContent = appendOperator(result.textContent, button.textContent);
+    } else {
+      // If the button is not an operator, append it normally
+      result.textContent += button.textContent;
+    }
+  })
+})
+
+equals.addEventListener("click", function() {
+  let lastChar = result.textContent.slice(-1);
+  console.log(lastChar);
+  if(lastChar ==  "*" || lastChar == "/" || lastChar ==  "+" || lastChar ==  "-" || lastChar == ".") {
+    result.textContent = "Syntax error";
+  }
+  else{
+    let resulty = eval(result.textContent);
+  // let resStr = resulty.toString();
+    result.textContent = resulty.toFixed(2);
+  }
+})
+
+start.addEventListener("click", function() {
+  result.textContent = "";
+})
+backS.addEventListener("click", function() {
+  if(result.textContent == "Syntax error") {
+    result.textContent = "";
+  }else{
+  result.textContent = result.textContent.toString().slice(0, -1);
+  }
+})
+  </script>
+</body>
+</html>

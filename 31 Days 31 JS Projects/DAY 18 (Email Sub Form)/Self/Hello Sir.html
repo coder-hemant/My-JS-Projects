@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  padding: 20px;
+  min-height: 100vh;
+  width: 100%;
+  padding-left: 20px;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button {
+  /* margin-top: 20px; */
+  cursor: pointer;
+  align-self: flex-start;
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+span {
+  position: relative;
+  display: none;
+  color: green;
+  bottom: 80px;
+}
+
+input {
+  font-size: 18px;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  align-self: flex-start;
+  padding: 10px 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+textarea {
+  align-self: flex-start;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  border: 0;
+  /* border: 1px solid; */
+  resize: none;
+  outline: 0;
+  font-size: 18px;
+  padding: 15px 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <form name="submit-to-google-sheet" class="div">
+      <input type="text" name="username" placeholder="Enter your name" required>
+      <textarea name="Message" rows="5" cols="20" minlength="30" placeholder="Write a message of at least 30 characters" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <span>Successfully Done</span>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx9CbLHY1YLSEKpS9QQexCRqaucLdG7WCPyTlLDwbHX3Qvqcl4I6p-6xkhRQr0Cf36kWQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+
+  
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    const input = document.querySelector("input");
+    const textarea = document.querySelector("textarea");
+    const span = document.querySelector("span");
+    const button = document.querySelector("button");
+      span.style.display = "block";
+      button.style.marginTop = "20px"
+      setTimeout(() => {
+        span.style.display = "none";
+        button.style.marginTop = "0";
+      }, 3000);
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+      textarea.value = ""
+    input.value = ""
+  })
+  </script>
+</body>
+</html>

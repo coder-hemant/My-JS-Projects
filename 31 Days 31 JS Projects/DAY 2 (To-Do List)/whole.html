@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+      >
+
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: darkslategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-height: 300px;
+  position: relative;
+  padding: 20px 20px 20px 20px ;
+  width: 450px;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+.todolist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+li {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 5px 40px 5px 45px;
+  vertical-align: middle;
+  background-color: darkslategray;
+  color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+
+.label {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  color: darkslategray;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+.label i {
+  transform: translate(3%, 2%);
+  -webkit-transform: translate(3%, 2%);
+  -moz-transform: translate(3%, 2%);
+  -ms-transform: translate(3%, 2%);
+  -o-transform: translate(3%, 2%);
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
+}
+
+.textareaAf {
+  width: 80%;
+  height: 150px;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding-top: 10px;
+  padding-bottom: 40px;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.textarea {
+  width: 0%;
+  height: 0;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.area {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  /* border: none; */
+  font-size: 14px;
+  padding: 20px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+textarea {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  resize: none;
+  width: 0%;
+  height: 0%;
+  outline: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.buttonAf {
+  user-select: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 8px;
+  color: white;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: rgb(86, 99, 111);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.button {
+  cursor: pointer;
+  font-size: 0;
+  padding: 0;
+  color: white;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: rgb(86, 99, 111);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.create {
+  background-color: darkslategray;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.span {
+  text-decoration: line-through;
+  color: rgb(206, 206, 206);
+}
+
+.liAf {
+  background-color: grey;
+}
+
+.delete {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+      </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>ToDo List</h1>
+
+      <ul class="todolist">
+      </ul>
+
+      <div class="create">
+        <i class="fa-sharp fa-solid fa-plus"></i>
+      </div>
+
+      <div class="textarea text">
+        <textarea class="write"></textarea>
+        <div class="creator button">Create</div>
+      </div>
+    </div>
+
+    <script>
+
+      const create = document.querySelector(".create");
+const createDiv = document.querySelector(".text");
+const textarea = document.querySelector("textarea");
+const divBtn = document.querySelector(".creator");
+const todoList = document.querySelector(".todolist");
+const labels = document.querySelectorAll(".label");
+
+create.addEventListener("click",
+function() {
+  divBtn.innerHTML = "Create"
+  createDiv.classList.replace("textarea", "textareaAf");
+  textarea.classList.add("area");
+  divBtn.classList.replace("button", "buttonAf");
+  saveToDo();
+})
+
+function createToDo(text) {
+  let editingSpan = null;
+
+  const li = document.createElement("li");
+  li.classList.add("item");
+
+  const label = document.createElement("div");
+  label.classList.add("todo", "label");
+  label.innerHTML = '<i class="fa-duotone fa-check"></i>';
+  label.style.fontSize = "0px"
+  
+  const span = document.createElement("span");
+  
+  const deleteTodo = document.createElement("div");
+  deleteTodo.classList.add("delete");
+  deleteTodo.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+
+  deleteTodo.addEventListener("click", function() {
+    li.remove();
+    saveToDo();
+  })
+
+  span.textContent = text;
+  label.addEventListener("click", function() {
+    li.classList.toggle("liAf")
+    span.classList.toggle("span");
+    if(label.style.fontSize == "0px") {
+      label.style.fontSize = "16px"
+    }else if(label.style.fontSize == "16px") {
+      label.style.fontSize = "0px"
+    }
+  });
+
+  span.addEventListener("click", function() {
+    editingSpan = span;
+    createDiv.classList.replace("textarea", "textareaAf");
+    textarea.classList.add("area");
+    divBtn.classList.replace("button", "buttonAf");
+    textarea.value = span.innerHTML
+    divBtn.innerHTML = "Save"
+  })
+
+  divBtn.addEventListener("click",
+function() {
+  if(divBtn.innerHTML == "Save" && editingSpan) {
+    editingSpan.textContent = textarea.value;
+    editingSpan = null;
+    saveToDo();
+    textarea.value = "";
+    createDiv.classList.replace("textareaAf", "textarea");
+    textarea.classList.remove("area");
+    divBtn.classList.replace("buttonAf", "button");
+    return;
+  }
+  if(textarea.value == "") {
+    textarea.value = "";
+    createDiv.classList.replace("textareaAf", "textarea");
+    textarea.classList.remove("area");
+    divBtn.classList.replace("buttonAf", "button");
+    return;
+  }
+  
+  if(divBtn.innerHTML == "Create"){
+  createToDo(textarea.value);
+  // saveToDo();
+  textarea.value = "";
+  createDiv.classList.replace("textareaAf", "textarea");
+  textarea.classList.remove("area");
+  divBtn.classList.replace("buttonAf", "button");
+}
+})
+
+  li.append(label, span, deleteTodo);
+  todoList.append(li);
+  saveToDo();
+}
+
+function saveToDo() {
+  let spans = document.querySelectorAll("span");
+  let data = [];
+
+  spans.forEach(span => {
+    data.push(span.textContent);
+  })
+
+  if(data.length === 0){
+    localStorage.removeItem("spans");
+  }else{
+  localStorage.setItem("spans", JSON.stringify(data))
+  }
+}
+
+(function() {
+  const lsToDos = JSON.parse(localStorage.getItem("spans"));
+
+  if(lsToDos === null){
+    return;
+  }else if(lsToDos == "") {
+    return;
+  }
+  lsToDos.forEach(lsToDo => {
+    createToDo(lsToDo);
+  })
+})();
+    </script>
+  </body>
+</html>

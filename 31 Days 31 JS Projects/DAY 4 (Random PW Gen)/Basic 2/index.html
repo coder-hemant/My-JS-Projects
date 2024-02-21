@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+      >
+  </head>
+  <body>
+    <div class="main">
+      <h2>Get a</h2>
+      <h1>New password</h1>
+
+      <div class="custom">
+        <div class="cus1">
+          <div class="pass"></div>
+          <input type="number" id="char" min="4" max="15" value="4">
+        </div>
+
+        <div class="cus2">
+          <div class="checkboxes">
+            <label for="check1" class="labeltxt">Uppercase letters</label>
+            <input type="checkbox" id="check1" class="checks" checked>
+            <label for="check1" class="labelmark">
+              <div class="checked"></div>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label for="check2" class="labeltxt">Lowercase letters</label>
+            <input type="checkbox" id="check2" class="checks">
+            <label for="check2" class="labelmark">
+              <div class="checked"></div>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label for="check3" class="labeltxt">Numbers</label>
+            <input type="checkbox" id="check3" class="checks">
+            <label for="check3" class="labelmark">
+              <div class="checked"></div>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label for="check4" class="labeltxt">Symbols</label>
+            <input type="checkbox" id="check4" class="checks">
+            <label for="check4" class="labelmark">
+              <div class="checked"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <button class="gen"><i class="fa-sharp fa-solid fa-bolt"></i>Generate</button>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

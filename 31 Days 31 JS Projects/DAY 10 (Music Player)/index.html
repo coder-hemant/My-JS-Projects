@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+      >
+</head>
+<body>
+
+  <div class="container">
+    <div class="upper">
+      <i class="fa-sharp fa-solid fa-chevron-left"></i>
+      <i class="fa-sharp fa-regular fa-bars"></i>
+    </div>
+    
+    <img src="https://s.yimg.com/ny/api/res/1.2/FwycWeGHaGwzvRlVYVRpNA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQ4MA--/https://media.zenfs.com/en/people_218/d648215a347595468b59e51123aa6997">
+    
+    <p>Despacito</p>
+    <p>Luis Fonsi</p>
+    
+    <audio id="song" >
+      <source src="Media/Despacito.mp3">
+    </audio>
+    
+    <input type="range">
+    
+    <div class="controls">
+      <i class="fa-sharp fa-solid fa-backward"></i>
+      <!-- <i class="fa-sharp fa-solid fa-pause"></i> -->
+      <i id="play" onclick="playPause()" class="fa-sharp fa-solid fa-play"></i>      
+      <i class="fa-sharp fa-solid fa-forward"></i>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

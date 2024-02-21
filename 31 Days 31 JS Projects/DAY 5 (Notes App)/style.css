@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  padding-left: 20px;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: pink;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.note {
+  
+  position: relative;
+  height: 250px;
+  width: 400px;
+  /*border: solid 1px;
+  */box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+textarea {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+font-family: 'Afacad', sans-serif;
+font-family: 'Poppins', sans-serif;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.delete {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+.save {
+  position: absolute;
+  right: 75px;
+  bottom: 15px;
+}

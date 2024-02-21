@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+      >
+</head>
+<body>
+
+  <div class="main">
+    <div class="overlay">
+      <div class="time">
+        <span class="hour">
+          00
+        </span>
+        <span class="semicolon">
+          :
+        </span>
+        <span class="minute">
+          00
+        </span>
+        <span class="semicolon">
+          :
+        </span>
+        <span class="seconds">
+          00
+        </span>
+        <span class="semicolon">
+          :
+        </span>
+        <span class="ms">
+          00 
+        </span>
+      </div>
+      
+  
+      <div class="control">
+        <div class="stop">
+          <i onclick="breakWatch()" id="stop" class="fa-solid fa-stop"></i>
+        </div>
+        <div class="start">
+          <i onclick="stopwatch()" id="start" class="fa-solid fa-play"></i>
+        </div>
+        <div class="reset">
+          <i onclick="resetWatch()" id="reset" class="fa-solid fa-rotate-left"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
