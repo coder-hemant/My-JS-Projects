@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main {
+  /* height: 100vh; */
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(88, 207, 207);
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.note {
+  height: 350px;
+  width: 350px;
+  /* margin-bottom: 25px; */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.tool {
+  height: 9%;
+  padding-top: 6px;
+  padding-right: 10px;
+  background-color: rgba(44, 43, 43, 0.829);
+  display: flex;
+  justify-content: end;
+  border-radius: 5px 5px 0 0 ;
+  -webkit-border-radius: 5px 5px 0 0 ;
+  -moz-border-radius: 5px 5px 0 0 ;
+  -ms-border-radius: 5px 5px 0 0 ;
+  -o-border-radius: 5px 5px 0 0 ;
+}
+
+.tool i {
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.note textarea {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 91%;
+  border: none;
+  background-color: rgb(222, 227, 231);
+  outline: none;
+  resize: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+}
+
+button {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 15px;
+  color: white;
+  background-color: rgb(44, 43, 43);
+  border: none;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+
+

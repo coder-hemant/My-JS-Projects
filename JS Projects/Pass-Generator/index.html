@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="pass-box" class="box">
+        Testing
+      </div>
+
+      <div class="row">
+        <div class="left">
+          Password Length
+        </div>
+        <div class="right">
+          <input id="charac" class="check" type="number" max="30" min="8" value="8"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <label for="uppercase">Uppercase Letters</label>
+        </div>
+        <div class="right">
+          <input id="uppercase" class="check" type="checkbox" checked> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <label for="lowercase">Lowercase Letters</label>
+        </div>
+        <div class="right">
+          <input id="lowercase" class="check" type="checkbox"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <label for="numbers">Numbers</label>
+        </div>
+        <div class="right">
+          <input id="numbers" class="check" type="checkbox"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <label for="symbols">Symbols</label>
+
+        </div>
+        <div class="right">
+          <input class="check" id="symbols" type="checkbox"> 
+        </div>
+      </div>
+
+      <button class="btn" id="btn">
+        Generate
+      </button>
+    </div>
+  <script src="script.js"></script>
+  </body>
+</html>

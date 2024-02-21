@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main {
+  background-color: rgb(255, 198, 75);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: white;
+  height: 400px;
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.box input {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 10px;
+  outline: none;
+  border: 1px solid rgba(93, 93, 93, 0.4);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#to-do-list {
+  font-size: 14px;
+  width: 100%;
+  text-align: justify ;
+  color: white;
+  
+}
+
+#to-do-list li i {
+  position: absolute;
+  font-size: 16px;
+  top: 7px;
+  right: 13px;
+}
+
+li {
+  position: relative;
+  background-color: rgb(49, 48, 48);  
+  padding: 5px 30px 5px 10px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  list-style-type: none;
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  user-select: none;
+}
+
+.done {
+  text-decoration: line-through;
+  color: black !important;
+  background-color: rgb(171, 170, 170) !important;
+}

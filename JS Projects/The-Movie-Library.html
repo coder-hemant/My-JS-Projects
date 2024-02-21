@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    >
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgb(97, 3, 160), rgb(115, 10, 133), rgb(123, 7, 100));
+  color: white;
+  user-select: none;
+}
+
+.main {
+  padding: 20px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+align-items: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  position: relative;
+}
+
+.input i {
+  position: absolute;
+  right: 15px;
+  top: 11px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.input input {
+  color: white;
+  background-color: rgb(174, 46, 174);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+input::placeholder {
+  color: rgb(216, 212, 212);
+}
+
+.movie-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex-shrink: 0;
+  position: relative;
+  width: 16%;
+  height: 300px;
+  background: linear-gradient(rgb(61, 4, 89), rgb(137, 10, 137), blue);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.box img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.box:hover {
+  .overlay{
+    display: block;
+  }
+}
+
+.overlay{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  padding: 10px 10px;
+  padding-right: 15px;
+  /* overflow: auto; */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.overlay .detail {
+  position: absolute;
+  bottom: 10px;
+  /* height: 20%; */
+
+}
+
+.detail h2 {
+  font-weight: 600;
+}
+
+
+.overview {
+  font-weight: 600;
+}
+
+.detail p {
+  font-size: 14px;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.detail .rating {
+  vertical-align: middle;
+}
+
+.detail i {
+  font-size: 14px;
+  vertical-align: auto;
+  color: gold ;
+}
+
+
+@media (max-width: 900px) {
+  .main {
+    padding: 20px 0;
+  }
+  .box {
+    width: 30%;
+    height: 210px;
+  }
+  .input {
+    width: 50%;
+  }
+  .detail h2 {
+    font-size: 13px;
+  }
+  .detail span {
+    font-size: 10px;
+  }
+  .detail .overview {
+    font-size: 12px;
+  }
+
+  .detail p {
+    font-size: 11px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="input">
+        <input type="text" id="search" placeholder="Search any movie" autocomplete="off">
+        <i class="fa-sharp fa-solid fa-xmark"></i>
+      </div>
+
+      <div class="movie-box">
+      </div>
+    </div>
+
+
+    <script>
+      const APIURL =
+    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+const SEARCHAPI =
+    "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+
+const input = document.querySelector(".input")
+
+const movieBox = document.querySelector(".movie-box");
+const searchItem = document.querySelector("#search");
+const deleteButton = document.querySelector(".input i");
+deleteButton.style.display ="none";
+
+
+    const getMovie = async(api) => {
+      const response = await fetch(api);
+      const data = await response.json();
+      searchMovie(data.results);  
+    }
+    getMovie(APIURL);
+
+
+    const searchMovie = (data) => {
+      movieBox.innerHTML = "";
+      data.forEach(item => {
+        const box = document.createElement("div");
+        box.classList.add("box");
+
+        let imgSrc = item.poster_path ? `${IMGPATH + item.poster_path}` : 'https://w0.peakpx.com/wallpaper/529/743/HD-wallpaper-404-missing-2019-2020-404-404-error-404-not-found-404-error-tech-technical-thumbnail.jpg';
+        
+          box.innerHTML = `
+      <img id="picture" src="${imgSrc}">
+
+      <div class="overlay">
+        <div class="detail">
+          <h2 class="name">${item.title}</h2>
+          <span class="rating">${item.vote_average}</span>
+          <i class="fa-sharp fa-solid fa-star"></i>
+
+          <h3 class="overview">
+            Overview
+          </h3>
+          <p>
+
+            ${item.overview}
+          </p>
+        </div>
+      </div>
+      `
+        
+
+      movieBox.appendChild(box);
+      });
+      
+    }
+
+searchItem.addEventListener("keyup",
+  function(event) {
+  if(event.target.value != "") {
+    getMovie(SEARCHAPI + event.target.value);
+    deleteButton.style.display = "inline-block";
+  }
+  else {
+    getMovie(APIURL);
+    deleteButton.style.display = "none";
+  }
+});
+
+
+deleteButton.addEventListener("click",
+function () {
+  searchItem.value = "";
+  deleteButton.style.display = "none";
+  getMovie(APIURL);
+})
+
+
+    </script>
+  </body>
+</html>

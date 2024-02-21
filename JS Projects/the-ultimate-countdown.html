@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Countdown Timer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  background: url(https://wallpapercave.com/wp/wp3324196.jpg) center center;
+  background-size: cover;
+  color: white;
+
+}
+
+#overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main1 {
+  margin-top: 20px;
+}
+#main1, .main2 {
+  font-size: 250%;
+}
+
+#columns {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#columns #col label {
+  font-size: 14px;
+}
+
+#col {
+  width: 10%;
+}
+
+input {
+  /* height: 40px; */
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  outline: none;
+  text-align: center;
+  background-color: rgb(194, 192, 192);
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="overlay">
+        <div id="main1">
+          I am coming soon...
+        </div>
+        <div class="main2" id="main2">
+          May 7, 2027
+        </div>
+        
+          <div id="columns">
+            <div id="col">
+              <input type="text" readonly><br>
+              <label for"">Days</label>
+            </div>
+            <div id="col">
+              <input type="text" readonly><br>
+              <label for"">Hours</label>
+            </div>
+            <div id="col">
+              <input type="text" readonly><br>
+              <label for"">Minutes</label>
+            </div>
+            <div id="col">
+              <input type="text" readonly><br>
+              <label for"">Seconds</label>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script>
+      const endDate = "07 May 2027";
+
+document.getElementById("main2").innerText = endDate;
+const inputs = document.querySelectorAll("input");
+
+
+function clock() {
+  const end = new Date(endDate);
+  const now = new Date();
+  const diff = (end - now) / 1000;  //Miliseconds to seconds
+
+  if(diff < 0) {
+    let result =  document.getElementById("overlay");
+    result.style.fontSize = "40px";
+    result.innerHTML = "Guess you got me kid!!"
+  };
+
+  inputs[0].value = Math.floor((diff / 3600 / 24));  //seconds to day
+  inputs[1].value = Math.floor((diff / 3600) % 24);   //seconds to hours (excluding days)
+  inputs[2].value = Math.floor((diff / 60) % 60);     //seconds to minutes (excluding days and hours)
+  inputs[3].value = Math.floor((diff) % 60);      //to seconds (after excluding days, hours and minutes)
+}
+
+clock();
+
+setInterval(() => {
+  clock()
+}, 1000);
+    </script>
+  </body>
+</html>

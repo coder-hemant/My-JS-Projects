@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  'Afacad', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* height: 100px; */
+  width: 30%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+button {
+  display: block;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h3 id="code">#000</h3>
+        <button id="btn">Thich Muji</button>
+      </div>
+    </div>
+    <script>
+      function getColor() {
+  const randomNumber = Math.floor(Math.random() * 16777215);
+  const randomCode = "#" + randomNumber.toString(16);
+  document.body.style.backgroundColor = randomCode;
+  document.getElementById("code").textContent = randomCode;
+}
+
+document.getElementById("btn").addEventListener("click", getColor);
+
+getColor();
+
+
+    </script>
+  </body>
+</html>
